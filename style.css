@@ -1,0 +1,85 @@
+.filter {
+    margin-top:10px;
+}
+.filter .label {
+    margin-right: 3px;
+    display:inline-block;
+    opacity:0.4;
+    cursor:pointer;
+    transition:opacity ease-out 0.1s;
+    -webkit-transition:opacity ease-out 0.1s;
+}
+.filter .label:hover {
+    opacity:1;
+}
+.filter .label--selected {
+    opacity:1;
+}
+.books {
+    margin-top: 5px;
+}
+.book {
+    height:200px;
+    background:white;
+}
+.book a {
+    color:black;
+    text-decoration: underline;
+}
+.book__img {
+    float:left;
+    margin-right: 10px;
+    border:1px solid silver;
+}
+.book__title {
+    font-weight:bold;
+}
+.book .label {
+    margin-right:3px;
+}
+.book__level--beginner {
+    background-color: #5CB85C;
+}
+.book__level--intermediate {
+    background-color: #F0AD4E;
+}
+.book__level--advanced {
+    background-color: #D9534F;
+}
+.book__info {
+    margin-top: 3px;
+    font-size: 1rem;
+    font-style: italic;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+/* bootstrap  overrides */
+.jumbotron {
+    margin-bottom: 10px;
+}
+.jumbotron.intro {
+    padding:20px;
+    margin-bottom:20px;
+}
+.jumbotron.intro h3 {
+    margin: 0;
+}
+
+.book.ng-move,
+.book.ng-enter,
+.book.ng-leave {
+  -webkit-transition:all ease-out 0.2s;
+  transition:all ease-out 0.2s;
+}
+
+.book.ng-leave.ng-leave-active,
+.book.ng-move,
+.book.ng-enter {
+  opacity:0;
+}
+
+.book.ng-leave,
+.book.ng-move.ng-move-active,
+.book.ng-enter.ng-enter-active {
+  opacity:1;
+}

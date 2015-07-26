@@ -1,0 +1,95 @@
+<!doctype html>
+<html ng-app="DemoApp">
+    <head>
+        <meta charet="utf-8">
+        <title>Wingtip Toys</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-animate.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+      <header>
+
+      </header>
+        <a href="index.html" class="lienmenu" style="background-image:url(img/header.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:120px; display:block;"></a>
+
+        <div href="#" class="lienmenu" style="background-image:url(img/bas-header.png); margin-top: 5px; background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:20px; display:block;">
+          <div style="text-align : center">
+              <a href="index.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Accueil</a>
+              <a href="panier.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Top vente</a>
+              <a href="contact.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Contact</a>
+              <a href="nous.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">A propos</a>
+          </div>
+
+        </div>
+        <div class="container" ng-controller="MainCtrl as MainCtrl">
+            <div class="">
+              <div class="row">
+                          <div class="col-lg-8 col-lg-offset-2">
+                              <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                              <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+                              <h3>Your contact page.</h3>
+                              <p>One Microsoft Way<br>
+                              Redmond, WA 98052-6399<br>
+                              P: 425.555.0100<br><br>
+                              <a href="mailto:Support@example.com">Support: Support@example.com</a><br>
+                              <a href="mailto:Marketing@example.com">Marketing: Marketing@example.com</a></p><br><br>
+
+                              <form name="sentMessage" id="contactForm" novalidate>
+                                  <div class="row control-group">
+                                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                                          <label>Nom</label>
+                                          <input type="text" class="form-control" placeholder="Nom" id="name" required data-validation-required-message="Entrer votre nom.">
+                                          <p class="help-block text-danger"></p>
+                                      </div>
+                                  </div>
+                                  <div class="row control-group">
+                                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                                          <label>Email</label>
+                                          <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Entrer votre email.">
+                                          <p class="help-block text-danger"></p>
+                                      </div>
+                                  </div>
+                                  <div class="row control-group">
+                                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                                          <label>Tel</label>
+                                          <input type="tel" class="form-control" placeholder="Numero de tel" id="phone" required data-validation-required-message="Entrer votre numero de téléphone.">
+                                          <p class="help-block text-danger"></p>
+                                      </div>
+                                  </div>
+                                  <div class="row control-group">
+                                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                                          <label>Message</label>
+                                          <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Entrer votre message."></textarea>
+                                          <p class="help-block text-danger"></p>
+                                      </div>
+                                  </div>
+                                  <br>
+                                  <div id="success"></div>
+                                  <div class="row">
+
+                                      <div class="form-group col-xs-12">
+                                          <button type="submit" class="btn btn-success btn-lg" style="background-color: #0c8fed">Envoyer</button>
+                                      </div>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+            </div>
+
+
+        </div>
+        <div>
+        <div href="#" class="lienmenu" style="background-image:url(img/footer.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:90px; display:block;">
+          <div style="text-align : center">
+              <a href="emplois.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Emplois</a>
+              <a href="contact.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Contact</a>
+          </div>
+        </div>
+        </div>
+    </body>
+</html>

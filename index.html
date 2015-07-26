@@ -1,0 +1,69 @@
+<!doctype html>
+<html ng-app="DemoApp">
+    <head>
+        <meta charet="utf-8">
+        <title>Wingtip Toys</title>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="./style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-animate.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+      <header>
+
+      </header>
+        <a href="index.html" class="lienmenu" style="background-image:url(img/header.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:120px; display:block;"></a>
+
+        <div href="#" class="lienmenu" style="background-image:url(img/bas-header.png); margin-top: 5px; background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:20px; display:block;">
+          <div style="text-align : center">
+              <a href="index.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Accueil</a>
+              <a href="panier.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Top vente</a>
+              <a href="contact.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Contact</a>
+              <a href="nous.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">A propos</a>
+          </div>
+
+        </div>
+        <div class="container" ng-controller="MainCtrl as MainCtrl">
+            <div class="">
+
+            </div>
+            <div class="intro">
+                <h3>{{ MainCtrl.books.length }} Article pour vous</h3>
+                <input ng-model="search"/>
+                <div ng-controller="FilterCtrl as FilterCtrl">
+
+                    <div class="filter">Levels :
+                        <span
+                            class="label label-info {{ 'book__level--' + level }} "
+                            ng-class="{'label--selected': FilterCtrl.isSelected('levels', level) }"
+                            ng-click="FilterCtrl.toggle('levels', level)"
+                            ng-repeat="level in MainCtrl.levels "
+                        >{{ level }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="row books">
+                <div class="book col-xs-12 col-md-6 col-lg-4" ng-repeat="book in MainCtrl.books|filterBooks|filter:search">
+                    <a ng-href="{{ book.url }}"><img class="book__img" ng-src="{{ book.cover }}" width="120"/></a>
+                    <div class="book__title"><a ng-href="{{ book.url }}">{{ book.title }}</a></div>
+                    <div class="book__author"><a ng-href="{{ book.authorUrl }}">{{ book.author }}</a></div>
+                    <span class="label label-info" ng-repeat="tag in book.tags">{{ tag }}</span>
+                    <span class="book__level label" ng-class="'book__level--' + book.level">{{ book.level }}</span>
+                    <div class="book__info">{{ book.info }}</div>
+                </div>
+            </div>
+        </div>
+        <div>
+        <div href="#" class="lienmenu" style="background-image:url(img/footer.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:90px; display:block;">
+          <div style="text-align : center">
+              <a href="emplois.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Emplois</a>
+              <a href="contact.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Contact</a>
+          </div>
+        </div>
+        </div>
+    </body>
+</html>
