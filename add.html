@@ -30,50 +30,52 @@
             <div class="">
               <div class="row">
                           <div class="col-lg-8 col-lg-offset-2">
-                              <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                              <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                              <h3>Your contact page.</h3>
-                              <p>One Microsoft Way<br>
-                              Redmond, WA 98052-6399<br>
-                              P: 425.555.0100<br><br>
-                              <a href="mailto:Support@example.com">Support: Support@example.com</a><br>
-                              <a href="mailto:Marketing@example.com">Marketing: Marketing@example.com</a></p><br><br>
+
+                              
+                             </p><br><br>
 
                               <form name="sentMessage" id="contactForm" novalidate>
                                   <div class="row control-group">
                                       <div class="form-group col-xs-12 floating-label-form-group controls">
-                                          <label>Nom</label>
-                                          <input type="text" class="form-control" placeholder="Nom" id="name" required data-validation-required-message="Entrer votre nom.">
+                                          <label>Nom Produit</label>
+                                          <input type="text" class="form-control" placeholder="Nom Produit" id="name" required data-validation-required-message="Entrer votre Nom Produit.">
                                           <p class="help-block text-danger"></p>
                                       </div>
                                   </div>
                                   <div class="row control-group">
                                       <div class="form-group col-xs-12 floating-label-form-group controls">
-                                          <label>Email</label>
-                                          <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Entrer votre email.">
+                                          <label>Prix</label>
+                                          <input type="email" class="form-control" placeholder="Prix" id="email" required data-validation-required-message="Entrer votre Prix.">
                                           <p class="help-block text-danger"></p>
                                       </div>
                                   </div>
                                   <div class="row control-group">
                                       <div class="form-group col-xs-12 floating-label-form-group controls">
-                                          <label>Tel</label>
-                                          <input type="tel" class="form-control" placeholder="Numero de tel" id="phone" required data-validation-required-message="Entrer votre numero de téléphone.">
+                                          <label>Level</label>
+                                          <input type="email" class="form-control" placeholder="Level" id="email" required data-validation-required-message="Entrer votre Level.">
                                           <p class="help-block text-danger"></p>
                                       </div>
                                   </div>
                                   <div class="row control-group">
                                       <div class="form-group col-xs-12 floating-label-form-group controls">
-                                          <label>Message</label>
+                                          <label>Description</label>
+                                          <label></label>
                                           <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Entrer votre message."></textarea>
                                           <p class="help-block text-danger"></p>
                                       </div>
+                                  </div>
+                                  <div class="row control-group">
+                                      <div class="form-group col-xs-12 floating-label-form-group controls">
+                                            <input type="file" name="pic" accept="image/*">
+                                            <input type="submit">
+                                        </div>
                                   </div>
                                   <br>
                                   <div id="success"></div>
                                   <div class="row">
 
                                       <div class="form-group col-xs-12">
-                                          <button type="submit" class="btn btn-success btn-lg" style="background-color: #0c8fed">Envoyer</button>
+                                          <button type="submit" class="btn btn-success btn-lg" style="background-color: #0c8fed">Edit</button>
                                       </div>
                                   </div>
                               </form>

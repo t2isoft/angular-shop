@@ -115,7 +115,7 @@ angular.module('DemoApp', ['ngAnimate'])
     this.name = 'world';
 
     this.books = [];
-    this.levels = ["beginner", "intermediate", "advanced"];
+    this.levels = ["3 - 6 ans", "6 - 9 ans", "9 - 12 ans"];
 
     var self = this;
     loadBooks().then(function(books) {

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html ng-app="DemoApp">
     <head>
         <meta charet="utf-8">
@@ -28,31 +28,25 @@
         </div>
         <div class="container" ng-controller="MainCtrl as MainCtrl">
             <div class="">
-              <h3>A propos de nous</h3>
-
-              <p>Wingtip Toys est leader mondial en conception, production et distribution de jouet pour enfants dans le monde entier.</p>
-
-              <p>Wingtip Toys a été créé aux Etats-Unis en 1948. En plein baby boom,
-                 Charles Lazarus lance à Washington, à l'âge de 25 ans, un magasin spécialisé dans la puériculture. Attentif aux demandes de ses clients,
-                  il fait régulièrement évoluer son commerce et commence à vendre des jouets premier âge puis étend son offre aux plus grands.
-                   En 1957, dix ans après l'ouverture de son premier magasin, Charles Lazarus ouvre le premier supermarché du jouet…</p>
-
-              <h4>Notre mission</h4>
-
-              <p>Wingtip Toys a pour mission d'offrir aux familles une gamme complète et pertinente de jouets, de loisirs et de puériculture dans un univers magique et rassurant.
-              Nos priorités : l'enfant, le client, les équipes, grandir et faire grandir.</p>
-
-              <p>Wingtip Toys, c'est le Choix <br>
-              Proposer des jeux, des jouets et des articles de puériculture qui puissent correspondre à chacun, à chaque envie,
-               et à chaque besoin est pour nous essentiel. La diversité des enfants par leurs goûts et personnalité en font une exigence…</p>
-
-              <p>Wingtip Toys, c'est la Nouveauté, l'actualité anticiper les demandes et besoins des enfants,
-                 répondre à leurs attentes très souvent marquées par les phénoménes de mode, l'actualité et un environnement « zappeur »,
-                  est un défi permanent que nous nous donnons…</p><br><br>
-
 
             </div>
+            <div class="">
+                <h3 style="text-align: center">Top vente</h3>
+                <div ng-controller="FilterCtrl as FilterCtrl">
 
+                </div>
+            </div>
+            <div class="row books">
+                <div class="book col-xs-8 col-md-8 col-lg-7" ng-repeat="book in MainCtrl.books|filterBooks">
+                    <a ng-href="{{ book.url }}"><img class="book__img" ng-src="{{ book.cover }}" width="120"/></a>
+                    <div class="book__title"><a ng-href="{{ book.url }}">{{ book.title }}</a></div>
+                    <div class="book__author"><a ng-href="{{ book.authorUrl }}">{{ book.author }}</a></div>
+                    <span class="label label-info" ng-repeat="tag in book.tags">{{ tag }}</span>
+                    <span class="book__level label" ng-class="'book__level--' + book.level">{{ book.level }}</span>
+                    <div class="book__info">{{ book.info }}</div>
+                    <button class="bouton">Commander</button>
+                </div>
+            </div>
         </div>
         <div>
         <div href="#" class="lienmenu" style="background-image:url(img/footer.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:90px; display:block;">
