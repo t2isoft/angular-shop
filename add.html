@@ -45,22 +45,27 @@
                                   <div class="row control-group">
                                       <div class="form-group col-xs-12 floating-label-form-group controls">
                                           <label>Prix</label>
-                                          <input type="email" class="form-control" placeholder="Prix" id="email" required data-validation-required-message="Entrer votre Prix.">
+                                          <input type="number" class="form-control" placeholder="Prix" id="email" required data-validation-required-message="Entrer votre Prix.">
                                           <p class="help-block text-danger"></p>
                                       </div>
                                   </div>
                                   <div class="row control-group">
                                       <div class="form-group col-xs-12 floating-label-form-group controls">
                                           <label>Level</label>
-                                          <input type="email" class="form-control" placeholder="Level" id="email" required data-validation-required-message="Entrer votre Level.">
-                                          <p class="help-block text-danger"></p>
+                                          <div>
+                                              <select>
+                                                  <option value="3-6ans">3 - 6 ans</option>
+                                                  <option value="6-9ans">6 - 9 ans</option>
+                                                  <option value="9-12ans">9 - 12 ans</option>
+                                              </select>
+                                          </div>
                                       </div>
                                   </div>
                                   <div class="row control-group">
                                       <div class="form-group col-xs-12 floating-label-form-group controls">
                                           <label>Description</label>
                                           <label></label>
-                                          <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Entrer votre message."></textarea>
+                                          <textarea rows="5" class="form-control" placeholder="Description produit" id="message" required data-validation-required-message="Entrer votre message."></textarea>
                                           <p class="help-block text-danger"></p>
                                       </div>
                                   </div>
@@ -75,7 +80,7 @@
                                   <div class="row">
 
                                       <div class="form-group col-xs-12">
-                                          <button type="submit" class="btn btn-success btn-lg" style="background-color: #0c8fed">Edit</button>
+                                          <a href="index.html"><button type="submit" class="btn btn-success btn-lg" style="background-color: #0c8fed">Edit</button></a>
                                       </div>
                                   </div>
                               </form>
