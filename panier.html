@@ -1,4 +1,10 @@
-<!doctype html>
+<?php
+session_start();
+$connect = mysql_pconnect("localhost", "root", "root1") or die(mysql_error());
+mysql_select_db("boutique", $connect);
+
+
+?>
 <html ng-app="DemoApp">
     <head>
         <meta charet="utf-8">
@@ -9,122 +15,97 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.13/angular-animate.min.js"></script>
         <script src="app.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-        <script src="https://apis.google.com/js/api:client.js"></script>
-        <script>
-        var googleUser = {};
-        var startApp = function() {
-          gapi.load('auth2', function(){
-            // Retrieve the singleton for the GoogleAuth library and set up the client.
-            auth2 = gapi.auth2.init({
-              client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
-              cookiepolicy: 'single_host_origin',
-              // Request scopes in addition to 'profile' and 'email'
-              //scope: 'additional_scope'
-            });
-            attachSignin(document.getElementById('customBtn'));
-          });
-        };
-
-        function attachSignin(element) {
-          console.log(element.id);
-          auth2.attachClickHandler(element, {},
-              function(googleUser) {
-                document.getElementById('name').innerText = "Signed in: " +
-                    googleUser.getBasicProfile().getName();
-              }, function(error) {
-                alert(JSON.stringify(error, undefined, 2));
-              });
-        }
-        </script>
-        <style type="text/css">
-          #customBtn {
-            display: inline-block;
-            background: #4285f4;
-            color: white;
-            width: 190px;
-            border-radius: 5px;
-            white-space: nowrap;
-          }
-          #customBtn:hover {
-            cursor: pointer;
-          }
-          span.label {
-            font-weight: bold;
-          }
-          span.icon {
-            background: url('/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
-            display: inline-block;
-            vertical-align: middle;
-            width: 42px;
-            height: 42px;
-            border-right: #2265d4 1px solid;
-          }
-          span.buttonText {
-            display: inline-block;
-            vertical-align: middle;
-            padding-left: 42px;
-            padding-right: 42px;
-            font-size: 14px;
-            font-weight: bold;
-            /* Use the Roboto font that is loaded in the <head> */
-            font-family: 'Roboto', sans-serif;
-          }
-        </style>      
     </head>
     <body>
       <header>
-
-      </header>
-        <a href="index.html" class="lienmenu" style="background-image:url(img/header.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:120px; display:block;"></a>
+               <a href="index.html" class="lienmenu" style="background-image:url(img/header.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:120px; display:block;"></a>
 
         <div href="#" class="lienmenu" style="background-image:url(img/bas-header.png); margin-top: 5px; background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:20px; display:block;">
           <div style="text-align : center">
-              <a href="index.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Accueil</a>
-              <a href="details.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Top vente</a>
+              <a href="indexUser.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Accueil</a>
+              <!--<a href="details.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Top vente</a>-->
               <a href="contact.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Contact</a>
               <a href="nous.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">A propos</a>
-              <a href="panier.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Panier</a>
+              <a href="../service/function.php/?tag=logout" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Déconnexion</a>
           </div>
 
         </div>
-                <div class="row">
-                  <section class="container">
-                  <div class="login">
-                    <h1>Login to Web App</h1>
-                    <form method="post" action="index.html">
-                      <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
-                      <p><input type="password" name="password" value="" placeholder="Password"></p>
-                      <p class="remember_me">
-                        <label>
-                          <input type="checkbox" name="remember_me" id="remember_me">
-                          Remember me on this computer
-                        </label>
-                      </p>
-                      <a href="item.html"><p class="submit"><input type="submit" name="commit" value="Login"></p></a>
-                    </form>
-                  </div>
-                  <div id="gSignInWrapper">
-                  <span class="label">Sign in with:</span>
-                  <div id="customBtn" class="customGPlusSignIn">
-                    <span class="icon"></span>
-                    <span class="buttonText">Google</span>
-                  </div>
-                  </div>
-                  <div id="name"></div>
-                  </div>
-                </section>
-                <!-- In the callback, you would hide the gSignInWrapper element on a
-                successful sign in -->
-                </br>
-                <script>startApp();</script>
-        <div>
-        <div href="#" class="lienmenu" style="background-image:url(img/footer.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:90px; display:block;">
-          <div style="text-align : center">
-              <a href="emplois.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Emplois</a>
-              <a href="contact.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Contact</a>
-          </div>
-        </div>
-        </div>
-    </body>
-</html>
+      </header>
+      <?php
+        $UserId = $_SESSION['UserId'];
+        $result = mysql_query("SELECT CartId FROM cart WHERE UserId = '$UserId'") or die(mysql_error());
+        $CartId = mysql_result($result, 0);
+        $result = mysql_query("SELECT pro.ProductId, pro.imagePath, pro.name, pro.description, pro.level, pro.price FROM product pro, cart ca, cartitem cat WHERE  cat.CartId = '$CartId' AND ca.UserId = '$UserId' AND cat.ProductId = pro.ProductId ") or die(mysql_error());
+                $a = 0;
+                $b = 0;
+                $c = 0;
+                $d = 0;
+        while ($row = mysql_fetch_assoc($result)) {
+          if ($row['ProductId'] == 1)
+          {
+            $a ++;
+          }
+          elseif($row['ProductId'] == 2)
+          {
+            $b ++;
+          }
+          elseif($row['ProductId'] == 3)
+          {
+            $c++;
+          }
+          elseif($row['ProductId'] == 3)
+          {
+            $c++;
+          }
+        }
+                
+             if($a > 0 )
+             {
+              ?><div class="container" ng-controller="MainCtrl as MainCtrl">
+              <div class="row books">
+                <div class="book col-xs-12 col-md-6 col-lg-4">
+                    <a> <img class="book__img" src="img/products/kapla.png" width="120" /> </a>
+                    <div class="book__title"><a>Boite de 1000 kapla </a></div>
+                    <div class="book__author"><a> Coffret de 1000 Kapla avec un livret de modeles de construction </a></div>
+                    <span class="book__Level label" ng-class="level">3 - 6 ans</span>
+                    <span class="" >250</span>
+                    <p> Quantité : <?php echo $a; ?> </p> 
+                </div>
+            </div>
+          </div> <?php
+             }
+             if($b > 0 )
+             {
+              ?><div class="container" ng-controller="MainCtrl as MainCtrl">
+              <div class="row books">
+                <div class="book col-xs-12 col-md-6 col-lg-4">
+                    <a> <img class="book__img" src="img/products/lego.png" width="120" /> </a>
+                    <div class="book__title"><a>Lego </a></div>
+                    <div class="book__author"><a> Boite de 650 lego </a></div>
+                    <span class="book__Level label" ng-class="level">6 - 9 ans</span>
+                    <span class="" >50</span>
+                    <p> Quantité : <?php echo $b; ?> </p> 
+                </div>
+            </div>
+          </div> <?php
+             }
+             if($c > 0 )
+             {
+              ?><div class="container" ng-controller="MainCtrl as MainCtrl">
+              <div class="row books">
+                <div class="book col-xs-12 col-md-6 col-lg-4">
+                    <a> <img class="book__img" src="img/products/origami.png" width="120" /> </a>
+                    <div class="book__title"><a>Premiers origami</a></div>
+                    <div class="book__author"><a> Livre d'initiation aux origamis pour les enfants.</a></div>
+                    <span class="book__Level label" ng-class="level">3 - 6 ans</span>
+                    <span class="" >5</span>
+                    <p> Quantité : <?php echo $c; ?> </p> 
+                </div>
+            </div>
+            <a href="index.html"><img src="img/paypal.gif"></br></br></a>
+          </div> <?php
+             }
+               ?>
+
+
+      <div ng-include="'footer.htm'"></div>

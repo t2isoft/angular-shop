@@ -11,21 +11,7 @@
         <script src="app.js"></script>
     </head>
     <body>
-      <header>
-
-      </header>
-        <a href="index.html" class="lienmenu" style="background-image:url(img/header.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:120px; display:block;"></a>
-
-        <div href="#" class="lienmenu" style="background-image:url(img/bas-header.png); margin-top: 5px; background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:20px; display:block;">
-          <div style="text-align : center">
-              <a href="index.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Accueil</a>
-              <a href="details.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Top vente</a>
-              <a href="contact.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Contact</a>
-              <a href="nous.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">A propos</a>
-              <a href="panier.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Panier</a>
-          </div>
-
-        </div>
+        <div ng-include="'header.htm'"></div>
         <div class="container" ng-controller="MainCtrl as MainCtrl">
             <div class="">
               <div class="row">
@@ -84,13 +70,4 @@
 
 
         </div>
-        <div>
-        <div href="#" class="lienmenu" style="background-image:url(img/footer.png); background-repeat: no-repeat; background-size: 100% auto; background-position: center center; width:auto; height:90px; display:block;">
-          <div style="text-align : center">
-              <a href="emplois.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Emplois</a>
-              <a href="contact.html" style="color : white;padding-right: 50px;font-size:17px; cursor: pointer">Contact</a>
-          </div>
-        </div>
-        </div>
-    </body>
-</html>
+       <div ng-include="'footer.htm'"></div>

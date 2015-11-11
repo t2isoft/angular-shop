@@ -22,10 +22,11 @@
     height:200px;
     background:white;
 }
-.book a {
-    color:black;
-    text-decoration: underline;
+
+.center{
+    text-align:center;
 }
+
 .book__img {
     float:left;
     margin-right: 10px;
@@ -37,13 +38,13 @@
 .book .label {
     margin-right:3px;
 }
-.book__level--beginner {
+.book__Level {
     background-color: #5CB85C;
 }
-.book__level--intermediate {
+.book__Level--intermediate {
     background-color: #F0AD4E;
 }
-.book__level--advanced {
+.book__Level--advanced {
     background-color: #D9534F;
 }
 .book__info {
@@ -89,6 +90,17 @@
     background:#478bf9;
     color:#fff;
     border-radius:2px;
-    width:100px;
+    width:120px;
     border:none;
+}
+
+.croix {
+    background:url(img/croix.png);
+    border:none;
+    width:10px;
+    height:10px;
+}
+
+.success{
+    color: green;
 }

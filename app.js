@@ -3,11 +3,21 @@ angular.module('DemoApp', ['ngAnimate'])
 
 .service('loadBooks', function($http, randomizeArray) {
     return function() {
-        return $http.get('./books.json').then(function(response) {
+        return $http.get('../service/function.php?tag=productList').then(function(response) {
             return randomizeArray(response.data.books);
         });
     };
 })
+
+.service('loadCartQuantity', function($http, randomizeArray) {
+    return function() {
+        return $http.get('../service/function.php?tag=productList').then(function(response) {
+            return randomizeArray(response.data.books);
+        });
+    };
+})
+
+
 
 // from https://github.com/coolaj86/knuth-shuffle/blob/master/index.js
 .service('randomizeArray', function() {
@@ -34,7 +44,7 @@ angular.module('DemoApp', ['ngAnimate'])
 .service('Filters', function() {
     var selection = {
         tags: [],
-        levels: []
+        Levels: []
     };
 
     function getItemIndex(field, value) {
@@ -60,6 +70,26 @@ angular.module('DemoApp', ['ngAnimate'])
     }
 })
 
+
+
+
+.service('deleteitem', function($http, randomizeArray) {
+    return function() {
+        return $http.get('../service/function.php?tag=productList').then(function(response) {
+            return randomizeArray(response.data.books);
+        });
+    };
+})
+
+
+
+
+
+
+
+
+
+
 .controller('FilterCtrl', function(Filters) {
 
     this.isSelected = function(field, value) {
@@ -70,6 +100,8 @@ angular.module('DemoApp', ['ngAnimate'])
         Filters.toggle(field, value);
     };
 
+
+
 })
 
 .filter('filterBooks', function(Filters) {
@@ -78,7 +110,7 @@ angular.module('DemoApp', ['ngAnimate'])
         var results = [];
 
         var filterTags = Filters.selection.tags.length > 0,
-            filterLevels = Filters.selection.levels.length > 0;
+            filterLevels = Filters.selection.Levels.length > 0;
 
         angular.forEach(array, function(book) {
             var hasTag = false,
@@ -90,7 +122,7 @@ angular.module('DemoApp', ['ngAnimate'])
                 }
             });
 
-            hasLevel = Filters.selection.levels.indexOf(book.level) > -1;
+            hasLevel = Filters.selection.Levels.indexOf(book.Level) > -1;
 
             if ((!filterTags || hasTag) && (!filterLevels || hasLevel)) {
                 results.push(book);
@@ -115,7 +147,7 @@ angular.module('DemoApp', ['ngAnimate'])
     this.name = 'world';
 
     this.books = [];
-    this.levels = ["3 - 6 ans", "6 - 9 ans", "9 - 12 ans"];
+    this.Levels = ["3 - 6 ans", "6 - 9 ans", "9 - 12 ans"];
 
     var self = this;
     loadBooks().then(function(books) {
@@ -125,3 +157,4 @@ angular.module('DemoApp', ['ngAnimate'])
     });
 
 });
+
